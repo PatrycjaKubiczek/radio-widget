@@ -1,0 +1,263 @@
+// VARIABLES
+// background colors
+$bg-body: #21212b;
+$bg-header: #edad61;
+$bg-panel: #292933;
+$bg-footer: #22222b;
+// fonts and borders colors
+$lightblue: #a2abbd;
+$white: #fff;
+$orange: #edae61;
+$line: #3f3f48;
+$shadow: rgba(0, 0, 0, 0.75);
+// font family
+$lato:'Lato', sans-serif;
+//padding
+$pdg: 20px;
+// media queries
+$phone: "only screen and (max-width : 768px)";
+//MIXINS
+@mixin flexbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+@mixin box-shadow($val) {
+    -webkit-box-shadow: $val;
+    -moz-box-shadow: $val;
+    box-shadow: $val;
+}
+// retina display
+@mixin image-2x($image) {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url($image);
+    }
+}
+//resets
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+button {
+    background: transparent;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+}
+// whole radio widget
+html {
+    font-size: 16px;
+}
+.widget {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: $pdg;
+}
+body {
+    background-color: $bg-body;
+    color: $lightblue;
+    font-family: $lato;
+}
+// header section
+header {
+    @include border-top-radius(30px);
+    background-color: $bg-header;
+    color: $white;
+    padding: $pdg;
+    text-transform: uppercase;
+    @include flexbox;
+    // return button
+    .return-btn {
+        cursor: pointer;
+        .return-svg {
+            fill: #fff;
+            fill-rule: evenodd;
+        }
+        &:hover {
+            .return-svg {
+                transition: 0.4s;
+                transform: translate(-3px, 0);
+            }
+        }
+    }
+    //turning-off button
+    .off-btn {
+        cursor: pointer;
+        .off-svg {
+            fill: #fff;
+            fill-rule: evenodd;
+        }
+        &:hover {
+            .off-svg {
+                transition: 0.4s;
+                transform: scale(0.9);
+            }
+        }
+    }
+}
+// radio stations section
+.stations {
+    padding: $pdg;
+    background-color: $bg-panel;
+    .accordion {
+        font-size: 1.3em;
+        @media #{$phone} {
+            font-size: 1em;
+        }
+        color: $lightblue;
+        padding: $pdg;
+        cursor: pointer;
+        width: 100%;
+        border-bottom: 1px solid $line;
+        transition: 0.4s;
+        &:last-child {
+            border-bottom: 0;
+        }
+        &:hover {
+            background-color: #444456;
+        }
+        .radio-name {
+            display: inline-block;
+        }
+        .radio-nr {
+            font-weight: bold;
+            float: right;
+        }
+    }
+}
+.panel {
+    @include flexbox;
+    padding: $pdg;
+    img {
+        width: 150px;
+        height: 150px;
+        @media #{$phone} {
+            width: 100px;
+            height: 100px;
+        }
+        @include border-radius(50%);
+        border: 3px solid $lightblue;
+    }
+}
+.image {
+    height: 150px;
+    width: 150px;
+    @media #{$phone} {
+        width: 100px;
+        height: 100px;
+    }
+    @include border-radius(50%);
+    border: 3px solid $lightblue;
+    background-image: url('https://s11.postimg.org/olrpbwmb7/radio.jpg');
+    background-size: cover;
+    @include image-2x('https://s17.postimg.org/q31wnemxb/radio_2x.jpg');
+}
+// buttons - player
+span {
+    height: 40px;
+    width: 40px;
+    display: block;
+    position: relative;
+}
+// plus button
+.plus {
+    @include border-radius(50px);
+    border: 3px solid $lightblue;
+    width: 40px;
+    height: 40px;
+    &:before,
+    &:after {
+        content: '';
+        height: 3px;
+        width: 24px;
+        display: block;
+        background: $lightblue;
+        @include border-radius(10px);
+        position: absolute;
+        top: 15px;
+        left: 5px;
+    }
+    &:after {
+        height: 24px;
+        width: 3px;
+        top: 5px;
+        left: 16px;
+    }
+    &:hover {
+        border: 3px solid #fff;
+        transition: 0.4s;
+        &:before,
+        &:after {
+            background: #fff;
+            transition: 0.4s;
+        }
+    }
+}
+// minus button
+.minus {
+    @include border-radius(50px);
+    border: 3px solid $lightblue;
+    width: 40px;
+    height: 40px;
+    &:before {
+        content: '';
+        height: 3px;
+        width: 24px;
+        display: block;
+        background: $lightblue;
+        position: absolute;
+        top: 16px;
+        left: 5px;
+        @include border-radius(10px);
+    }
+    &:hover {
+        border: 3px solid #fff;
+        transition: 0.4s;
+        &:before,
+        &:after {
+            background: #fff;
+            transition: 0.4s;
+        }
+    }
+}
+// footer section
+footer {
+    @include border-bottom-radius(30px);
+    padding: $pdg;
+    background-color: $bg-footer;
+    text-align: center;
+    border-top: 1px solid $line;
+    @include box-shadow(-1px 33px 46px -13px $shadow);
+    .current {
+        color: $orange;
+        text-transform: uppercase;
+        padding: $pdg;
+    }
+    .current-name {
+        font-weight: normal;
+    }
+}

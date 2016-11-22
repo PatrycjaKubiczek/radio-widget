@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Radio widget</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<title>Radio widget</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="widget">
+    <!--  header section -->
+    <header>
+        <button class="return-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" reserveAspectRatio="xMidYMid" width="20" height="30" viewBox="0 0 28 47.969">
+                <path d="M27.428,3.233 L4.824,23.967 L27.425,44.698 C28.169,45.443 28.169,46.649 27.425,47.393 C26.681,48.138 25.475,48.138 24.731,47.393 L1.197,25.805 C0.971,25.713 0.759,25.576 0.575,25.393 C0.186,25.004 0.006,24.489 0.023,23.981 C-0.003,23.462 0.176,22.935 0.572,22.539 C0.759,22.352 0.975,22.213 1.206,22.120 L24.733,0.539 C25.477,-0.203 26.684,-0.203 27.428,0.539 C28.172,1.284 28.172,2.490 27.428,3.233 Z" class="return-svg" />
+            </svg>
+        </button>
+
+        <h1>Station</h1>
+
+        <button class="off-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="30" height="30" viewBox="0 0 44 52">
+                <path d="M22.000,52.000 C9.850,52.000 0.000,42.150 0.000,30.000 C0.000,20.676 5.810,12.725 14.000,9.523 L14.000,13.893 C8.079,16.840 4.000,22.937 4.000,30.000 C4.000,39.941 12.059,48.000 22.000,48.000 C31.941,48.000 40.000,39.941 40.000,30.000 C40.000,22.937 35.922,16.840 30.000,13.893 L30.000,9.523 C38.190,12.725 44.000,20.676 44.000,30.000 C44.000,42.150 34.150,52.000 22.000,52.000 ZM22.000,22.000 C20.896,22.000 20.000,21.105 20.000,20.000 L20.000,2.000 C20.000,0.895 20.896,0.000 22.000,0.000 C23.105,0.000 24.000,0.895 24.000,2.000 L24.000,20.000 C24.000,21.105 23.105,22.000 22.000,22.000 Z" class="off-svg" />
+            </svg>
+        </button>
+    </header>
+
+    <!-- station section -->
+    <div class="stations">
+        <!--  Putin FM  -->
+        <div class="panel">
+            <button class="minus-btn">
+                <span class="minus"></span>
+            </button>
+            <img src="https://s12.postimg.org/yqmtjd80t/radio.png" alt="Album cover" />
+            <button class="plus-btn">
+                <span class="plus"></span>
+            </button>
+        </div>
+        <div class="accordion">
+            <p class="radio-name">Putin FM</p>
+            <p class="radio-nr">66,6</p>
+        </div>
+        <!--  Dribble FM  -->
+        <div class="panel">
+            <button class="minus-btn">
+                <span class="minus"></span>
+            </button>
+            <div class="image"></div>
+            <button class="plus-btn">
+                <span class="plus"></span>
+            </button>
+        </div>
+        <div class="accordion">
+            <p class="radio-name">Dribble FM</p>
+            <p class="radio-nr">101,2</p>
+        </div>
+        <!--  Doge FM  -->
+        <div class="panel">
+            <button class="minus-btn">
+                <span class="minus"></span>
+            </button>
+            <div class="image"></div>
+            <button class="plus-btn">
+                <span class="plus"></span>
+            </button>
+        </div>
+        <div class="accordion">
+            <p class="radio-name">Doge FM</p>
+            <p class="radio-nr">99,4</p>
+        </div>
+        <!--  Ballads FM  -->
+        <div class="panel">
+            <button class="minus-btn">
+                <span class="minus"></span>
+            </button>
+            <div class="image"></div>
+            <button class="plus-btn">
+                <span class="plus"></span>
+            </button>
+        </div>
+        <div class="accordion">
+            <p class="radio-name">Ballads FM</p>
+            <p class="radio-nr">87,1</p>
+        </div>
+        <!--  Maximum FM  -->
+        <div class="panel">
+            <button class="minus-btn">
+                <span class="minus"></span>
+            </button>
+            <div class="image"></div>
+            <button class="plus-btn">
+                <span class="plus"></span>
+            </button>
+        </div>
+        <div class="accordion">
+            <p class="radio-name">Maximum FM</p>
+            <p class="radio-nr">142,2</p>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="current-playing">
+            <p class="current">Currently playing</p>
+            <h3 class="current-name">Radio name</h3>
+        </div>
+    </footer>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
